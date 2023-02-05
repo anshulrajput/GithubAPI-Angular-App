@@ -79,7 +79,7 @@ export class SearchComponent implements OnInit {
       updatedData = [...JSON.parse(existingData)]
     }
 
-    updatedData.push({
+    updatedData.unshift({
       'searchTerm': searchTerm,
       'userData': currentResult
     })

@@ -1,38 +1,45 @@
-<p-table class="history-table" [value]="searchHistory">
-    <ng-template pTemplate="header">
-        <tr>
-            <th class="term-column">Search Term</th>
-            <th class="data-column">User Data</th>
-        </tr>
-    </ng-template>
-    <ng-template pTemplate="body" let-searchRecord>
-        <tr (click)="resultClicked(searchRecord)">
-            <td class="term-column">{{searchRecord.searchTerm}}</td>
-            <td class="data-column">
-                <div *ngIf="searchRecord.userData" class="user-details">
-                    <div>
-                        <!-- <span class="heading">User Image</span> -->
-                        <img src="{{searchRecord.userData.avatar_url}}" alt="">
-                    </div>
-                    <div>
-                        <div class="heading"><span>Github User Name</span></div>
-                        <div class="user-name"><span>{{searchRecord.userData.login}}</span></div>
-                    </div>
-                </div>
-                <div *ngIf="!searchRecord.userData" class="p-4">
-                    <span>No Result Found</span>
-                </div>
-            </td>
-        </tr>
-    </ng-template>
-    <ng-template pTemplate="summary">
-        <div class="p-d-flex p-ai-center p-jc-between">
-            {{searchHistory ? searchHistory.length : 0 }} Records in History.
-        </div>
-    </ng-template>
-</p-table>
+<div class="grid">
+    <div class="m-auto md:col-5 lg:col-4 sm:col-12">
 
-<div>
-    <button pButton type="button" label="Clear History" class="mt-3" (click)="clearHistory()" [disabled]="searchHistory.length == 0"></button>
+        <p-table [value]="searchHistory">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th class="term-column">Search Term</th>
+                    <th class="data-column">User Data</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-searchRecord>
+                <tr (click)="resultClicked(searchRecord)" [ngStyle]="{ 'cursor': searchRecord.userData ? 'pointer' : 'default' }">
+                    <td class="term-column">{{searchRecord.searchTerm}}</td>
+                    <td class="data-column">
+                        <div *ngIf="searchRecord.userData" class="user-details">
+                            <div>
+                                <!-- <span class="heading">User Image</span> -->
+                                <img src="{{searchRecord.userData.avatar_url}}" alt="">
+                            </div>
+                            <div>
+                                <div class="heading"><span>Github User Name</span></div>
+                                <div class="user-name"><span>{{searchRecord.userData.login}}</span></div>
+                            </div>
+                        </div>
+                        <div *ngIf="!searchRecord.userData" class="p-4">
+                            <span>No Result Found</span>
+                        </div>
+                    </td>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="summary">
+                <div class="p-d-flex p-ai-center p-jc-between">
+                    {{searchHistory ? searchHistory.length : 0 }} Records in History.
+                </div>
+            </ng-template>
+        </p-table>
+        
+        <div>
+            <button pButton type="button" label="Clear History" class="mt-3" (click)="clearHistory()" [disabled]="searchHistory.length == 0"></button>
+        </div>
+        
+
+    </div>
 </div>
 

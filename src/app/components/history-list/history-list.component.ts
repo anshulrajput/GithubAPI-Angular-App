@@ -21,7 +21,8 @@ export class HistoryListComponent {
 
   resultClicked(record: History){
     console.log(record)
-    this.showUserDetails.emit(record)
+    if(record.userData)
+      this.showUserDetails.emit(record)
   }
 
   clearHistory(){
