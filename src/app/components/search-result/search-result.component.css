@@ -1,0 +1,27 @@
+.custom-div {
+    width: 40%;
+    margin: auto;
+    margin-top: 0.5em;
+}
+
+.user-card{
+    cursor: pointer;
+}
+
+.user-details img{
+    max-width: 100%;
+}
+
+.user-details{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.heading{
+    color: var(--grey);
+}
+
+.user-name{
+    font-size: 1.25em;
+    margin-top: 3em;
+}

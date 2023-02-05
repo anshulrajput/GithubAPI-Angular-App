@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+    height: 100%;
+    margin-right: 10%;
+    align-items: center;
+    float: right;
+}
+
+.container .nav-btns{
+    height: 100%;
+    margin-right: 2em;
+    align-items: center;
+    display: flex;
+    text-decoration: none;
+    color: var(--grey);
+    /* cursor: pointer; */
+}
+
+.container .nav-btns.selected{
+    border-bottom: 2px solid var(--primary-color);
+}

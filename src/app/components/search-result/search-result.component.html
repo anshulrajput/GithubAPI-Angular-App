@@ -1,0 +1,25 @@
+
+<span>Search Result</span>
+<div class="custom-div">
+
+    <p-card *ngIf="searchedUser" class="mb-2 user-card" (click)="userClicked()">
+        <div class="user-details">
+            <div>
+                <!-- <span class="heading">User Image</span> -->
+                <img src="{{searchedUser.avatar_url}}" alt="">
+            </div>
+            <div>
+                <div class="heading"><span>Github User Name</span></div>
+                <div class="user-name"><span>{{searchedUser.login}}</span></div>
+            </div>
+        </div>
+    </p-card>
+
+    <p-card *ngIf="!searchedUser" class="mb-2 user-card">
+        <span>
+            User Not Found!
+        </span>
+    </p-card>
+
+</div>
+

@@ -1,0 +1,10 @@
+.container{
+    /* display: inline-grid; */
+    padding: 3em;
+    text-align: center;
+}
+
+.search-bar{
+    width: 40%;
+    margin: auto;
+}
