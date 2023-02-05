@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MessageService } from 'primeng/api';
-import { History } from 'src/app/interfaces/History';
-import { LocalStorageService } from 'src/app/services/local-storage.service';
+import { History } from '../../interfaces/History';
+import { LocalStorageService } from '../../services/local-storage.service';
 
 @Component({
   selector: 'app-history-list',

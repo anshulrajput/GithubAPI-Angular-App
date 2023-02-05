@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { User } from 'src/app/interfaces/User';
+import { User } from '../../interfaces/User';
 
 @Component({
   selector: 'app-search-result',
